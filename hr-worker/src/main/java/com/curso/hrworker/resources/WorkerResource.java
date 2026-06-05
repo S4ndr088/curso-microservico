@@ -27,12 +27,8 @@ public class WorkerResource {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<Worker> findById(@PathVariable Long id) {
         Optional<Worker> obj = repository.findById(id);
-
-        if (Objects.nonNull(obj)) {
-            return ResponseEntity.ok(obj.get());
-        }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(obj.get());
     }
 }
