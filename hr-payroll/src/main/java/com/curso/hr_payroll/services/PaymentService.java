@@ -14,7 +14,7 @@ import java.util.Map;
 @Service
 public class PaymentService {
 
-    @Value("${hr-worker.host}")
+    //@Value("${hr-worker.host}")
     private String workerHost;
 
     @Autowired
