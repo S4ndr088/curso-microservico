@@ -34,7 +34,9 @@ public class WorkerResource {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Worker> findById(@PathVariable Long id) {
+    public ResponseEntity<Worker> findById(@PathVariable Long id) throws InterruptedException {
+
+        //Thread.sleep(3000L);
 
         logger.info("Port = " + environment.getProperty("local.server.port"));
 
